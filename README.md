@@ -10,6 +10,7 @@ If you experience any software defects related to this module, please notify the
 * Copy the ZabbixDocker.tar.gz file to necessary servers.
 * On the server: tar zxvf ZabbixDocker.tar.gz.  It is recommended that this is done in it's own directory.
 * Run install.sh.  Please note that this assumes that the Zabbix agent files are located at /etc/zabbix/zabbix_agentd.d/.  If this is not the case as in an Ubuntu installation then please add the directory as a parameter to install.sh.
+* Make sure the user account that your zabbix agent runs as is a member of the docker group, otherwise some commands will fail. Assuming your zabbix agent runs as user 'zabbix' then run this command: sudo usermod -aG docker zabbix
 * Restart the zabbix-agent process.
 * Import the ZabbixDockerTemplate.xml file into Zabbix using the GUI. You can do this from your local computer.
 
